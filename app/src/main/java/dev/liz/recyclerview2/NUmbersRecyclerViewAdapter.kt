@@ -5,11 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.math.BigInteger
 
-class NumbersRecyclerViewAdapter(var numbersList: List<Int>): RecyclerView.Adapter<NumbersViewHolder>(){
+class NumbersRecyclerViewAdapter(var numbersList: MutableList<BigInteger>): RecyclerView.Adapter<NumbersViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumbersViewHolder {
-        var itemView=
-            LayoutInflater.from(parent.context).inflate(R.layout.numbers_list_items,parent,false)
+        var itemView= LayoutInflater.from(parent.context).inflate(R.layout.numbers_list_items,parent,false)
         return  NumbersViewHolder(itemView)
     }
 
@@ -22,7 +22,6 @@ class NumbersRecyclerViewAdapter(var numbersList: List<Int>): RecyclerView.Adapt
         return numbersList.size
     }
 }
-
 class NumbersViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
     var tvNumbers=itemView.findViewById<TextView>(R.id.tvNumbers)
 
